@@ -172,10 +172,10 @@ def evaluate_all_runs(base_dir: Path, sweep_dir: Path, output_csv: Path):
 
             cpu_cycles = get_stat(stats, ["system.cpu.numCycles", "numCycles"], 1.0)
             sim_insts = get_stat(stats, ["simInsts", "system.cpu.committedInsts"], cpu_cycles * 1.4)
-            l1_repl = get_stat(stats, ["system.cpu.dcache.replacements", "dcache.replacements"], 0.0)
-            l2_repl = get_stat(stats, ["system.l2cache.replacements", "l2cache.replacements"], 0.0)
-            dram_read = get_stat(stats, ["system.mem_ctrl.bytesRead", "bytesRead"], 0.0)
-            dram_write = get_stat(stats, ["system.mem_ctrl.bytesWritten", "bytesWritten"], 0.0)
+            l1_repl = get_stat(stats, ["system.cpu.dcache.replacements::total", "system.cpu.dcache.replacements", "dcache.replacements"], 0.0)
+            l2_repl = get_stat(stats, ["system.l2cache.replacements::total", "system.l2cache.replacements", "l2cache.replacements"], 0.0)
+            dram_read = get_stat(stats, ["system.mem_ctrl.dram.bytesRead::total", "system.mem_ctrl.bytesRead", "bytesRead::total", "bytesRead"], 0.0)
+            dram_write = get_stat(stats, ["system.mem_ctrl.dram.bytesWritten::total", "system.mem_ctrl.bytesWritten", "bytesWritten::total", "bytesWritten"], 0.0)
             dram_bytes = dram_read + dram_write
 
             # Peak bus bandwidth bytes over elapsed cycles
@@ -235,10 +235,13 @@ def evaluate_all_runs(base_dir: Path, sweep_dir: Path, output_csv: Path):
         if not stats:
             continue
 
-        npu_cycles = get_stat(stats, ["system.sbr_npu.npu_cycles", "npu_cycles", "system.cpu.numCycles"], 1.0)
-        dma_bytes = get_stat(stats, ["system.sbr_npu.dma_bytes_transferred", "dma_bytes_transferred"], 0.0)
+        npu_cycles = get_stat(stats, ["system.sbr_npu.npuCycles", "system.sbr_npu.npu_cycles", "npuCycles", "npu_cycles"], 1.0)
+        dma_bytes = (
+            get_stat(stats, ["system.sbr_npu.dmaBytesRead", "dmaBytesRead"], 0.0)
+            + get_stat(stats, ["system.sbr_npu.dmaBytesWritten", "dmaBytesWritten"], 0.0)
+        )
         if dma_bytes == 0.0:
-            dma_bytes = get_stat(stats, ["system.mem_ctrl.bytesRead"], 0.0) + get_stat(stats, ["system.mem_ctrl.bytesWritten"], 0.0)
+            dma_bytes = get_stat(stats, ["system.sbr_npu.dma_bytes_transferred", "dma_bytes_transferred"], 0.0)
 
         l1_repl = get_stat(stats, ["system.cpu.dcache.replacements"], 0.0)
         l2_repl = get_stat(stats, ["system.l2cache.replacements"], 0.0)

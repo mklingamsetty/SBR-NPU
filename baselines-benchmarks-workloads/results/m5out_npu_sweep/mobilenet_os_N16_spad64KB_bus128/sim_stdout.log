@@ -1,0 +1,33 @@
+warn: Base 10 memory/cache size 512MB will be cast to base 2 size 512MiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 512MB will be cast to base 2 size 512MiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 512MB will be cast to base 2 size 512MiB.
+warn: Base 10 memory/cache size 256kB will be cast to base 2 size 256KiB.
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (512 Mbytes)
+src/arch/riscv/isa.cc:321: info: RVV enabled, VLEN = 256 bits, ELEN = 64 bits
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:32] into equal-sized buckets. Rounding up.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:8] into equal-sized buckets. Rounding up.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.1
+gem5 compiled Nov  3 2026 09:14:11
+gem5 started Nov  5 2026 18:36:14
+gem5 executing on mlingamsettyUbuntu, pid 7173
+command line: /home/murali-lingamsetty/Github_Repositories/EEL5764-Computer-Architecture/gem5/build/RISCV/gem5.opt --outdir=/home/murali-lingamsetty/Github_Repositories/SBR-NPU/baselines-benchmarks-workloads/results/m5out_npu_sweep/mobilenet_os_N16_spad64KB_bus128 /home/murali-lingamsetty/Github_Repositories/SBR-NPU/baselines-benchmarks-workloads/scripts/run_o3_baseline.py --cmd=/home/murali-lingamsetty/Github_Repositories/SBR-NPU/baselines-benchmarks-workloads/bin/mobilenet_npu_os.riscv --enable-npu --npu-dim=16 --spad-kb=64 --bus-width-bits=128
+
+info: Standard input is not a terminal, disabling listeners.
+[gem5] Starting simulation for /home/murali-lingamsetty/Github_Repositories/SBR-NPU/baselines-benchmarks-workloads/bin/mobilenet_npu_os.riscv (Bus=128-bit)
+src/sim/syscall_emul.cc:97: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1127: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/murali-lingamsetty/Github_Repositories/SBR-NPU/baselines-benchmarks-workloads/bin/mobilenet_npu_os.riscv'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+[SBR_NPU_HW] MobileNetV2_3x3_DW | Mode=OS | M=64 N=32 K=16 | NPU_Cycles=976 | Total_MACs=32768 | Out[0]=-251
+[gem5] Exited @ tick 88191500 because exiting with last active thread context
