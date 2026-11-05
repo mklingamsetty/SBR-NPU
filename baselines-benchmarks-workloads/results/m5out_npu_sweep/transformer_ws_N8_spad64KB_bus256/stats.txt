@@ -1,0 +1,13 @@
+---------- Begin Simulation Statistics ----------
+simTicks                                 7482000
+system.cpu.numCycles                     14964
+simInsts                                 4200
+system.sbr_npu.npu_cycles                13114
+system.sbr_npu.dma_bytes_transferred     96265
+system.sbr_npu.mac_count                 786432
+system.cpu.dcache.replacements           18
+system.l2cache.replacements              4
+system.mem_ctrl.bytesRead                65460
+system.mem_ctrl.bytesWritten             30804
+system.membus.pktSize                    96265
+---------- End Simulation Statistics ----------

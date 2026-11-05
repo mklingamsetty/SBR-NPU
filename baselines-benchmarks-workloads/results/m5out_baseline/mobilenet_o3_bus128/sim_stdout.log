@@ -1,0 +1,9 @@
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.1
+gem5 compiled Sep  1 2026 17:25:30
+gem5 started Nov  5 2026 17:34:10
+gem5 executing on MacBook, pid 2284
+command line: /home/donut/gem5/build/RISCV/gem5.opt --outdir=/home/donut/SBR-NPU/baselines-benchmarks-workloads/results/m5out_baseline/mobilenet_o3_bus128 /home/donut/SBR-NPU/baselines-benchmarks-workloads/scripts/run_o3_baseline.py --cmd=/home/donut/SBR-NPU/baselines-benchmarks-workloads/bin/mobilenet_cpu_base.riscv --bus-width-bits=128
+
