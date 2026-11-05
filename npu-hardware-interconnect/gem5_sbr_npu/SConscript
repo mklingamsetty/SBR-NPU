@@ -1,0 +1,4 @@
+Import('*')
+
+SimObject('SbrNpu.py', sim_objects=['SbrNpu'])
+Source('sbr_npu.cc')
